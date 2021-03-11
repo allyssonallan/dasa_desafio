@@ -10,6 +10,7 @@ Welcome to desafio_dasa's documentation!
    :maxdepth: 2
    :caption: Contents:
    ../index.html
+   ../chr1.html
 
 
 
