@@ -9,12 +9,8 @@ Welcome to desafio_dasa's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   html/index.html
+   html/chr1.html
 
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
