@@ -1,0 +1,18 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--gzvcf 12878_S19_snp.vcf.gz
+	--max-alleles 2
+	--min-alleles 2
+	--recode
+	--remove-indels
+	--stdout
+	--keep-filtered PASS
+
+Using zlib version: 1.2.8
+After filtering, kept 1 out of 1 Individuals
+Outputting VCF file...
+After filtering, kept 86095 out of a possible 98969 Sites
+Run Time = 1.00 seconds
