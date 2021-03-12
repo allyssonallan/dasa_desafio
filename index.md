@@ -1,12 +1,19 @@
-## Welcome to GitHub Pages
+## Desafio Dasa
 
-You can use the [editor on GitHub](https://github.com/allyssonallan/dasa_desafio/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Cargo: especialista em bioinformática
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Tarefa
 
-### Markdown
+Implementar um pipeline de bioinformática a partir de um vcf fornecido pelo Dr. Rodrigo Guarischi, objetivando anotar as variantes disponíveis no dbSNP e obter as frequências de um banco de dados populacional. O resultado deverá ser entregue em interface interativa web para filtrar variantes por frequência.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Pensando a solução
+
+A primeira etapa compreendeu o download do arquivo em formato vcf (4.1) e checagem da integridade do arquivo usando a ferramenta "MD5SUM" que apresentou a hash "34fa1b4e3f0a2a908c238179882c9d14". A análise descritiva do arquivo foi realizada pelo programa "VCFtools 1.5.0". O arquivo vcf apresentou os dados genômicos do indivíduo "12878_S19" em referência ao genoma humano (hg19) com 98969 loci e 57.5502 como número médio de vezes que cada base foi lida.
+
+A segunda etapa foi garantir a certificação dos bons modos de prática clínica e de construção de pipelines de bioinformatica a partir de artigos de revisão recentes ¹².
+
+[https://snakemake.readthedocs.io/en/stable/](Snakemake) foi o programa escolhido para gerenciar o fluxo de trabalho, a referência para anotação da nomenclatura do dbsnp [ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz"](versão 138 - 1.5GB) e o banco de dados de populações humanas escolhido foi o projeto 1000 genomas [ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz](fase 3 - 1.8GB) </a>
+
 
 ```markdown
 Syntax highlighted code block
