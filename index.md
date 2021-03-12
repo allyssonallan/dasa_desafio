@@ -23,10 +23,14 @@ Instale no Ubuntu (tutorial testado no 20.04.2 LTS):
 [Python 3.8](https://www.python.org/downloads/) 
 [Minconda para py 3.8](https://conda.io/en/latest/miniconda.html)
 Mamba: 
-```conda install -c conda-forge mamba
+``` 
+conda install -c conda-forge mamba
+``` 
 
 Snakemake: 
-```mamba create -c conda-forge -c bioconda -n snakemake snakemake</p>
+```
+mamba create -c conda-forge -c bioconda -n snakemake snakemake</p>
+``` 
 
 <p>Ative o snakemake: conda activated snakemake</p>
 
