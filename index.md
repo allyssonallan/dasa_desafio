@@ -12,8 +12,7 @@ A primeira etapa compreendeu o download do arquivo em formato vcf (4.1) e checag
 
 A segunda etapa foi garantir a certificação dos bons modos de prática clínica e de construção de pipelines de bioinformatica a partir de artigos de revisão recentes ¹².
 
-[https://snakemake.readthedocs.io/en/stable/](Snakemake) foi o programa escolhido para gerenciar o fluxo de trabalho, a referência para anotação da nomenclatura do dbsnp [ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz"](versão 138 - 1.5GB) e o banco de dados de populações humanas escolhido foi o projeto 1000 genomas [ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz](fase 3 - 1.8GB) </a>
-
+[Snakemake](https://snakemake.readthedocs.io/en/stable/) foi o programa escolhido para gerenciar o fluxo de trabalho, a referência para anotação da nomenclatura do dbsnp [versão 138 - 1.5GB](ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz") e o banco de dados de populações humanas escolhido foi o projeto 1000 genomas [fase 3 - 1.8GG](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz)
 
 
 ```markdown
