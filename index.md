@@ -28,61 +28,52 @@ conda install -c conda-forge mamba
 ``` 
 
 Snakemake: 
-```
-mamba create -c conda-forge -c bioconda -n snakemake snakemake</p>
+```bash
+mamba create -c conda-forge -c bioconda -n snakemake snakemake
+``` 
+Ative o snakemake: 
+```bash
+conda activated snakemake
+``` 
+Na pasta desafio3 crie a pasta e baixe as referencias:
+
+``` bash
+mkdir references / cd references
+
+wget -c ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz
+
+wget -c ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz
 ``` 
 
-<p>Ative o snakemake: conda activated snakemake</p>
+Prossiga com a instalação das dependências:
+```bash 
+conda install bcftools vcftools tabix numpy vcfanno
 
-<p>Na pasta desafio3 crie a pasta e baixe as referencias:</p>
+pip install cyvcf2
+``` 
 
-<p>mkdir references / cd references</p>
+Certifique-se que o arquivo Snakefile está na pasta desafio3 e rode:
 
-<p>wget -c ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz</p>
+``` bash
+snakemake --cores 4 12878_S19_snp.chr1.html
+``` 
+Recomenda-se rodar um dry-run antes para checar se todos os arquivos estão presentes:
+``` bash 
+snakemake -n --cores 4 12878_S19_snp.chr1.html
+``` 
+Caso esteja em um ambiente slurm:
 
-<p>wget -c ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz</p>
+``` bash
+snakemake --cluster 'sbatch -t 2-00:00:00' -j 10 12878_S19_snp.chr1.html
+``` 
+### Resultados
 
-<p>Prossiga com a instalação das dependências:</p>
-<p>conda install bcftools vcftools tabix numpy vcfanno</p>
-<p>pip install cyvcf2</p>
+O arquivo com anotações para todas as variantes dos cromossomos autosomos encontra-se no [Google Drive](https://drive.google.com/file/d/19znoY5-7vt5n1dfL9xmzCadfd7wQ7O6b/view?usp=sharing). Optei por incluir somente o [chr1](https://drive.google.com/file/d/1d1f5X8qovJXM55QpIzsJcjL4hk1vSBr0/view?usp=sharing) na tabela dinâmica com uso da ferramenta Datatable e jQuery. 
 
-<p>Certifique-se que o arquivo Snakefile está na pasta desafio3 e rode:</p>
 
-<p>snakemake --cores 4 12878_S19_snp.chr1.html</p>
+O relatório foi escrito em [Markdown] e hospedado no [github].
 
-<p>Recomenda-se rodar um dry-run antes:</p>
+### Referências
 
-<p>snakemake -n --cores 4 12878_S19_snp.chr1.html</p>
-
-<p> Caso esteja em um ambiente slurm: </p>
-
-<p> snakemake --cluster 'sbatch -t 2-00:00:00' -j 10 12878_S19_snp.chr1.html </p>
-<br>
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/allyssonallan/dasa_desafio/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+1. SoRelle, Jeffrey A., Megan Wachsmann, and Brandi L. Cantarel. "Assembling and validating bioinformatic pipelines for next-generation sequencing clinical assays." Archives of pathology & laboratory medicine 144.9 (2020): 1118-1130</p>
+2. Kadri, Sabah. "Building Infrastructure and Workflows for Clinical Bioinformatics Pipelines." Advances in Molecular Pathology (2020).
