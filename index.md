@@ -70,6 +70,9 @@ snakemake --cluster 'sbatch -t 2-00:00:00' -j 10 12878_S19_snp.chr1.html
 
 O arquivo com anotações para todas as variantes dos cromossomos autosomos encontra-se no [Google Drive](https://drive.google.com/file/d/19znoY5-7vt5n1dfL9xmzCadfd7wQ7O6b/view?usp=sharing). Optei por incluir somente o [chr1](https://drive.google.com/file/d/1d1f5X8qovJXM55QpIzsJcjL4hk1vSBr0/view?usp=sharing) na tabela dinâmica com uso da ferramenta Datatable e jQuery. 
 
+Tabela dinâmica do chr1 usando datatable e jQuery:
+
+https://allyssonallan.github.io/dasa_desafio/chr1.html
 
 O relatório foi escrito em [Markdown](https://guides.github.com/features/mastering-markdown/) e hospedado no [github](https://pages.github.com/).
 
