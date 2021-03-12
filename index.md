@@ -12,8 +12,48 @@ A primeira etapa compreendeu o download do arquivo em formato vcf (4.1) e checag
 
 A segunda etapa foi garantir a certificação dos bons modos de prática clínica e de construção de pipelines de bioinformatica a partir de artigos de revisão recentes ¹².
 
-[Snakemake](https://snakemake.readthedocs.io/en/stable/) foi o programa escolhido para gerenciar o fluxo de trabalho, a referência para anotação da nomenclatura do dbsnp [versão 138 - 1.5GB](ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz") e o banco de dados de populações humanas escolhido foi o projeto 1000 genomas [fase 3 - 1.8GG](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz)
+[Snakemake](https://snakemake.readthedocs.io/en/stable/) foi o programa escolhido para gerenciar o fluxo de trabalho, a referência para anotação da nomenclatura do dbsnp [versão 138 - 1.5GB](ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz) e o banco de dados de populações humanas escolhido foi o projeto 1000 genomas [fase 3 - 1.8GB] (ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz)
 
+Para filtragem das variantes bialélicas foi utilizado o programa vcftools, para anotação do vcf foi utilizado o programa vcfanno, e para gerenciamento de diferentes formatos de tabelas foram utilizados as ferramentas bcftools e tabix. As etapas finais foram auxilidas com o uso do script [vcf2tsv](https://github.com/sigven/vcf2tsv).
+
+### Passo a passo
+
+Instale no Ubuntu (tutorial testado no 20.04.2 LTS):
+
+[Python 3.8](https://www.python.org/downloads/) 
+[Minconda para py 3.8](https://conda.io/en/latest/miniconda.html)
+Mamba: 
+```conda install -c conda-forge mamba
+
+Snakemake: 
+```mamba create -c conda-forge -c bioconda -n snakemake snakemake</p>
+
+<p>Ative o snakemake: conda activated snakemake</p>
+
+<p>Na pasta desafio3 crie a pasta e baixe as referencias:</p>
+
+<p>mkdir references / cd references</p>
+
+<p>wget -c ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz</p>
+
+<p>wget -c ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/dbsnp_138.b37.vcf.gz</p>
+
+<p>Prossiga com a instalação das dependências:</p>
+<p>conda install bcftools vcftools tabix numpy vcfanno</p>
+<p>pip install cyvcf2</p>
+
+<p>Certifique-se que o arquivo Snakefile está na pasta desafio3 e rode:</p>
+
+<p>snakemake --cores 4 12878_S19_snp.chr1.html</p>
+
+<p>Recomenda-se rodar um dry-run antes:</p>
+
+<p>snakemake -n --cores 4 12878_S19_snp.chr1.html</p>
+
+<p> Caso esteja em um ambiente slurm: </p>
+
+<p> snakemake --cluster 'sbatch -t 2-00:00:00' -j 10 12878_S19_snp.chr1.html </p>
+<br>
 
 ```markdown
 Syntax highlighted code block
